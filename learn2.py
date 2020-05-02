@@ -1,6 +1,15 @@
 # howto: branch statement (selection)
 
-mark = raw_input("Enter your mark: ")
+import sys
+
+def get_input(ask):
+  if sys.version_info[0] < 3 or sys.version_info[1] < 4:
+    temp = raw_input(ask)
+  else:
+    temp = input(ask)
+  return temp
+
+mark = get_input("Enter your mark: ")
 mark = int(mark)
 
 if mark > 100 or mark < 0 :
